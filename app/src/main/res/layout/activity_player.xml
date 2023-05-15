@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
-    tools:context=".PlayerActivity">
+    tools:context=".PlayerActivity"
+    android:background="#091227">
+
+
 
 
     <ImageView
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:id="@+id/headphoens"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
@@ -20,11 +23,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:id="@+id/songName"
         android:text="Song Name"
+        android:textColor="#DBE6FF"
         android:layout_below="@+id/headphoens"/>
 
 
@@ -33,26 +37,27 @@
     <SeekBar
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/mSeekBarTime"
-        android:layout_below="@id/songName"/>
+        android:layout_below="@id/songName"
+        android:thumbTint="#DBE6FF"
+        android:progressBackgroundTint="#DBE6FF"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/linearlayout"
         android:layout_below="@+id/mSeekBarTime"
         android:gravity="center">
 
 
         <ImageView
+            android:id="@+id/previous"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/previous"
-            android:id="@+id/previous"/>
-
+            android:src="@drawable/previous" />
 
         <ImageView
             android:layout_width="40dp"
@@ -60,7 +65,7 @@
             android:src="@drawable/play"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:id="@+id/play"/>
+            android:id="@+id/play" />
 
 
         <ImageView
