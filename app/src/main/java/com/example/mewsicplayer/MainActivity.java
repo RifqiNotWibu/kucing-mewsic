@@ -55,5 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
                 allMusicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        // passing intent ke playeractivity
+                        startActivity(new Intent(MainActivity.this, PlayerActivity.class)
+                                // songlist = key untuk daftar lagu
+                                // position = key untuk posisi lagu
+                                .putExtra("songsList", musics)
+                                .putExtra("position", position));
+                    }
+                });
+            }
 
 }
