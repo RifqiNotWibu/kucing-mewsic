@@ -159,3 +159,50 @@ public class PlayerActivity extends AppCompatActivity {
 
             }
         });*/
+        // working on seekbar
+
+        mSeekBarTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                // IF USER TOUCHES AND MESSES WITH SEEEKBAR
+                if (fromUser) {
+                    mSeekBarTime.setProgress(progress);
+                    mMediaPlayer.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        // till here seekbar wont change on its own
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(mMediaPlayer!=null) {
+                    try {
+                        if (mMediaPlayer.isPlaying()) {
+                            Message message = new Message();
+                            message.what = mMediaPlayer.getCurrentPosition();
+                            handler.sendMessage(message);
+                            Thread.sleep(1000);
+
+                        }
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+
+    }
