@@ -206,3 +206,31 @@ public class PlayerActivity extends AppCompatActivity {
         }).start();
 
     }
+
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            mSeekBarTime.setProgress(msg.what);
+        }
+    };
+
+    // lastly create a method for play
+
+    private void play() {
+        // if mediaplayer is not null and playing and if play button is pressed pause it
+
+        if (mMediaPlayer!=null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+            // change the image of playpause button to play when we pause it
+            play.setImageResource(R.drawable.play);
+        } else {
+            mMediaPlayer.start();
+            // if mediaplayer is playing // the image of play button should display pause
+            play.setImageResource(R.drawable.pause);
+
+        }
+    }
+
+}
