@@ -6,18 +6,22 @@
     android:layout_height="match_parent"
     android:padding="30dp"
     tools:context=".PlayerActivity"
-    android:background="#091227">
+    android:background="@drawable/gradient">
 
 
 
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/headphoens"
+        app:shapeAppearanceOverlay="@style/circular"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/headphones"/>
+        android:src="@drawable/dontopdis"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="20"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -37,7 +41,7 @@
     <SeekBar
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/mSeekBarTime"
         android:layout_below="@id/songName"
@@ -47,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/linearlayout"
         android:layout_below="@+id/mSeekBarTime"
         android:gravity="center">
@@ -55,13 +59,13 @@
 
         <ImageView
             android:id="@+id/previous"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/previous" />
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:src="@drawable/play"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
@@ -69,8 +73,8 @@
 
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/next"
             android:id="@+id/next"/>
 
