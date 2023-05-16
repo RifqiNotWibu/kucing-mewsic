@@ -76,5 +76,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }).check();
     }
-
+    // arraylist
+    private ArrayList<File> findMusicFiles (File file) {
+        ArrayList<File> musicfileobject = new ArrayList<>();
+        File [] files = file.listFiles();
+        for (File currentFiles: files) {
+            if (currentFiles.isDirectory() && !currentFiles.isHidden()) {
+                musicfileobject.addAll(findMusicFiles(currentFiles));
+            } else {
+                if (currentFiles.getName().endsWith(".flac") || currentFiles.getName().endsWith(".mp4a") || currentFiles.getName().endsWith(".wav")) {
+                    musicfileobject.add(currentFiles);
+                }
+            }
+        }
+        return musicfileobject;
+    }
 }
