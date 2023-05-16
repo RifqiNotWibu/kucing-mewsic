@@ -4,24 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
     tools:context=".PlayerActivity"
-    android:background="@drawable/gradient">
+    android:background="#000000">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/song"
+            />
+
+    </FrameLayout>
 
 
-
+    <TextView
+        android:id="@+id/playing_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/playing_now"
+        android:textAppearance="@style/playing_now"
+        android:layout_marginTop="20dp"
+        />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+
         android:id="@+id/headphoens"
-        app:shapeAppearanceOverlay="@style/circular"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/dontopdis"
-        android:shadowColor="#FFFFFF"
-        android:shadowDx="20"
-        />
+        android:elevation="10dp"
+        android:background="@drawable/dropshadow"
+        android:src="@drawable/song"
+        app:shapeAppearanceOverlay="@style/circular">
+
+
+
+    </com.google.android.material.imageview.ShapeableImageView>
 
     <TextView
         android:layout_width="match_parent"
@@ -59,13 +85,13 @@
 
         <ImageView
             android:id="@+id/previous"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:src="@drawable/previous" />
 
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:src="@drawable/play"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
@@ -73,8 +99,8 @@
 
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:src="@drawable/next"
             android:id="@+id/next"/>
 
