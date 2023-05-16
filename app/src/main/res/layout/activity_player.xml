@@ -23,8 +23,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient" />
-
     </FrameLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kupeng"
+        android:paddingBottom="300dp"/>
 
 
     <TextView
@@ -34,7 +40,7 @@
         android:gravity="center"
         android:text="@string/playing_now"
         android:textAppearance="@style/playing_now"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -57,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:id="@+id/songName"
