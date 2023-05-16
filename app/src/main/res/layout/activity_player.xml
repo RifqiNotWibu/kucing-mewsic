@@ -18,10 +18,11 @@
             android:scaleType="centerCrop"
             android:src="@drawable/song"
             />
+
         <ImageView
-            android:background="@drawable/gradient"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient" />
 
     </FrameLayout>
 
@@ -44,8 +45,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="10dp"
-        android:elevation="10dp"
-        android:background="@drawable/dropshadow"
+        android:elevation="25dp"
         android:src="@drawable/song"
         app:shapeAppearanceOverlay="@style/circular">
 
@@ -62,7 +62,7 @@
         android:gravity="center"
         android:id="@+id/songName"
         android:text="Song Name"
-        android:textColor="#DBE6FF"
+        android:textColor="#FFFFFF"
         android:layout_below="@+id/headphoens"/>
 
 
