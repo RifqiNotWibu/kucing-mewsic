@@ -18,6 +18,10 @@
             android:scaleType="centerCrop"
             android:src="@drawable/song"
             />
+        <ImageView
+            android:background="@drawable/gradient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </FrameLayout>
 

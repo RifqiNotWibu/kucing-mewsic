@@ -11,7 +11,7 @@
     </style>
     <style name="playing_now">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#DFDFDF</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>
