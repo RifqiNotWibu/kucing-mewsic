@@ -48,5 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i <musics.size(); i++) {
                     songs[i] = musics.get(i).getName();
                 }
+                // adapter array lagu;
+                musicArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, songs);
+                //setting adapter pada listview
+                allMusicList.setAdapter(musicArrayAdapter);
+
+                allMusicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
 
 }
