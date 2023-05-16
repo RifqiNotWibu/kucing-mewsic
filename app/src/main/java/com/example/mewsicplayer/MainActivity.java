@@ -65,5 +65,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                // meminta akses storage
+                permissionToken.continuePermissionRequest();
+            }
+        }).check();
+    }
 
 }
