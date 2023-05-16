@@ -95,4 +95,67 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
     }
-    
+    private void initializeMusicPlayer(int position) {
+
+        // if mediaplayer is not null and playing reset it at the launch of activity
+
+        if (mMediaPlayer!=null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.reset();
+        }
+
+        // getting out the song name
+        String name = musicList.get(position).getName();
+        songName.setText(name);
+
+        // accessing the songs on storage
+
+        Uri uri = Uri.parse(musicList.get(position).toString());
+
+        // creating a mediaplayer
+        // passing the uri
+
+        mMediaPlayer = MediaPlayer.create(this, uri);
+
+        // SETTING ON PREPARED MEDIAPLAYER
+
+        mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                // seekbar
+                mSeekBarTime.setMax(mMediaPlayer.getDuration());
+
+                // while mediaplayer is playing the play button should display pause
+                play.setImageResource(R.drawable.pause);
+                // start the mediaplayer
+                mMediaPlayer.start();
+            }
+        });
+
+        // setting the oncompletion listener
+        // after song finishes what should happen // for now we will just set the pause button to play
+
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                play.setImageResource(R.drawable.play);
+            }
+        });
+
+
+        // if you want the the mediaplayer to go to next song after its finished playing one song its optional
+        /*mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                play.setImageResource(R.drawable.play);
+
+                int currentPosition = position;
+                if (currentPosition < musicList.size() -1) {
+                    currentPosition++;
+                } else {
+                    currentPosition = 0;
+                }
+                initializeMusicPlayer(currentPosition);
+
+            }
+        });*/
