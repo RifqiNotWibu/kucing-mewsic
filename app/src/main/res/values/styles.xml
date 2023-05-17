@@ -7,7 +7,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="circular">
-        <item name="cornerSize">10%</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="playing_now">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>
