@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             if (currentFiles.isDirectory() && !currentFiles.isHidden()) {
                 musicfileobject.addAll(findMusicFiles(currentFiles));
             } else {
-                if (currentFiles.getName().endsWith(".flac") || currentFiles.getName().endsWith(".mp4a") || currentFiles.getName().endsWith(".wav")) {
+                if (currentFiles.getName().endsWith(".flac") || currentFiles.getName().endsWith(".mp3")) {
                     musicfileobject.add(currentFiles);
                 }
             }

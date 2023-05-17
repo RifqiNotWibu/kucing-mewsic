@@ -88,7 +88,7 @@ public class PlayerActivity extends AppCompatActivity {
                 if (position<=0) {
                     position = musicList.size();
                 } else {
-                    position++;
+                    position--;
                 }
 
                 initializeMusicPlayer(position);

@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".PlayerActivity"
     android:background="#000000">
 
@@ -13,24 +13,23 @@
         >
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/song"
+            android:src="@drawable/img_1"
             />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient" />
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
     </FrameLayout>
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/kupeng"
-        android:paddingBottom="300dp"/>
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--&lt;!&ndash;        android:src="@drawable/kupeng"&ndash;&gt;-->
+<!--        android:paddingBottom="300dp"/>-->
 
 
     <TextView
@@ -40,19 +39,19 @@
         android:gravity="center"
         android:text="@string/playing_now"
         android:textAppearance="@style/playing_now"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         />
 
     <com.google.android.material.imageview.ShapeableImageView
 
         android:id="@+id/headphoens"
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="240dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="10dp"
-        android:elevation="25dp"
-        android:src="@drawable/song"
+        android:elevation="40dp"
+        android:src="@drawable/img"
         app:shapeAppearanceOverlay="@style/circular">
 
 
@@ -63,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:id="@+id/songName"
@@ -77,7 +76,7 @@
     <SeekBar
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/mSeekBarTime"
         android:layout_below="@id/songName"
@@ -87,7 +86,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/linearlayout"
         android:layout_below="@+id/mSeekBarTime"
         android:gravity="center">
@@ -100,8 +99,8 @@
             android:src="@drawable/previous" />
 
         <ImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/play"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"

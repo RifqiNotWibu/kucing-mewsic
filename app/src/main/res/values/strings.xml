@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">MewsicPlayer</string>
-    <string name="playing_now">Playing Now</string>
+    <string name="playing_now">Now Playing</string>
 </resources>

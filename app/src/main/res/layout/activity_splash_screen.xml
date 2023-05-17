@@ -16,19 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/song"
+            android:src="@drawable/img_1"
             />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient" />
+            android:layout_height="match_parent"/>
     </FrameLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/kupeng"
+        android:src="@drawable/mewtext"
         android:padding="40dp"
         android:layout_marginBottom="50dp"/>
 
