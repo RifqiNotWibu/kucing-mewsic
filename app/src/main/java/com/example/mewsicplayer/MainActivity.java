@@ -84,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
         File [] files = file.listFiles();
         for (File currentFiles: files) {
             if (currentFiles.isDirectory() && !currentFiles.isHidden()) {
-                musicfileobject.addAll(findMusicFiles(currentFiles));
-            } else {
+                musicfileobject.addAll(findMusicFiles(currentFiles)); //Jika Dir = Add semua file music dalam dir
+             } else {
                 if (currentFiles.getName().endsWith(".flac") || currentFiles.getName().endsWith(".mp3")) {
-                    musicfileobject.add(currentFiles);
+                    musicfileobject.add(currentFiles); //Jika standalone = add jika .flac / .mp3
                 }
             }
         }
