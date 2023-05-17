@@ -24,12 +24,13 @@
     </FrameLayout>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/kupeng"
+        android:layout_width="450dp"
+        android:layout_height="90dp"
+        android:src="@drawable/mewtext"
         android:padding="20dp"/>
 
     <ListView
+        android:layout_marginTop="90dp"
         android:padding="20dp"
         android:id="@+id/listView"
         android:layout_width="match_parent"
