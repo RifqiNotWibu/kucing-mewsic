@@ -19,11 +19,13 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PlayerActivity extends AppCompatActivity {
 
     Bundle songExtraData; // in order to get the values from previous activity
-    ImageView prev,play, next;
+    ImageView prev,play, next, shuffle, repeat;
+    boolean isShuffleOn, isRepeatOn;
     int position;
     SeekBar mSeekBarTime;
     static MediaPlayer mMediaPlayer; // if not static then two or more than two songs will be played at the same time
@@ -40,6 +42,9 @@ public class PlayerActivity extends AppCompatActivity {
         prev = findViewById(R.id.previous);
         play = findViewById(R.id.play);
         next = findViewById(R.id.next);
+        shuffle = findViewById(R.id.shuffle);
+        repeat = findViewById(R.id.repeat);
+
         mSeekBarTime = findViewById(R.id.mSeekBarTime);
         songName  = findViewById(R.id.songName);
 
@@ -94,6 +99,38 @@ public class PlayerActivity extends AppCompatActivity {
                 initializeMusicPlayer(position);
             }
         });
+
+        shuffle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle the shuffle state
+                isShuffleOn = !isShuffleOn;
+
+                // Update the button appearance or perform any other actions
+                if (isShuffleOn) {
+//                    shuffle.setText("Shuffle: ON");
+                } else {
+//                    shuffle.setText("Shuffle: OFF");
+                }
+            }
+        });
+
+        repeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle the repeat state
+                isRepeatOn = !isRepeatOn;
+
+                // Update the button appearance or perform any other actions
+                if (isRepeatOn) {
+//                    repeat.setText("Repeat: ON");
+                } else {
+//                    repeat.setText("Repeat: OFF");
+                }
+            }
+        });
+
+
     }
     private void initializeMusicPlayer(int position) {
 
@@ -132,33 +169,31 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
-        // setting the oncompletion listener
-        // after song finishes what should happen // for now we will just set the pause button to play
-
         mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 play.setImageResource(R.drawable.play);
+
+                if (isShuffleOn) {
+                    Collections.shuffle(musicList);
+                }
+
+                if (isRepeatOn) {
+                    // Play the current song again
+                    initializeMusicPlayer(position);
+                } else {
+                    int currentPosition = position;
+                    if (currentPosition < musicList.size() - 1) {
+                        currentPosition++;
+                    } else {
+                        currentPosition = 0;
+                    }
+                    initializeMusicPlayer(currentPosition);
+                }
             }
         });
 
 
-        // if you want the the mediaplayer to go to next song after its finished playing one song its optional
-        /*mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                play.setImageResource(R.drawable.play);
-
-                int currentPosition = position;
-                if (currentPosition < musicList.size() -1) {
-                    currentPosition++;
-                } else {
-                    currentPosition = 0;
-                }
-                initializeMusicPlayer(currentPosition);
-
-            }
-        });*/
         // working on seekbar
 
         mSeekBarTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
